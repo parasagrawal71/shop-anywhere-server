@@ -29,8 +29,8 @@ mongoose
 //   console.log("Mongoose is connected!!!!");
 // });
 
-app.get("/", (req, res) => {
-  UserModel.find().then((response) => {
+app.get("/", async (req, res) => {
+  await UserModel.find().then((response) => {
     console.log("response", response);
     res.send(response);
   });
