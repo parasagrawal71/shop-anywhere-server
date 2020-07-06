@@ -27,7 +27,7 @@ mongoose
 //   console.log("Mongoose is connected!!!!");
 // });
 
-app.use("/", UserRoute);
+app.use("/api/users", UserRoute);
 
 app.get("/", (req, res) => {
   res.send("Server is responding");
