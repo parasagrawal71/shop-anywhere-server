@@ -1,0 +1,35 @@
+{
+  "name": "shop-anywhere-server",
+  "version": "1.0.0",
+  "description": "Shop Anywhere website's server",
+  "main": "server.js",
+  "author": "Paras Agrawal",
+  "license": "MIT",
+  "scripts": {
+    "start": "node server.js",
+    "lint": "eslint ./ --fix"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "engines": {
+    "node": "10.16.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn lint"
+    }
+  },
+  "devDependencies": {
+    "eslint": "6.8.0",
+    "eslint-config-airbnb": "18.1.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-import": "2.20.1",
+    "eslint-plugin-jsx-a11y": "6.2.3",
+    "eslint-plugin-prettier": "^3.1.3",
+    "eslint-plugin-react": "7.19.0",
+    "eslint-plugin-react-hooks": "2.5.0",
+    "husky": "^4.2.5",
+    "prettier": "^2.0.5"
+  }
+}
