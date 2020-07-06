@@ -20,6 +20,7 @@ mongoose
     process.env.MONGODB_URI || "mongodb://localhost:27017/shop-anywhere",
     {
       useNewUrlParser: true,
+      useUnifiedTopology: true,
     }
   )
   .then(() => {
