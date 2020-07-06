@@ -1,9 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const debug = require("debug");
-
-// Models
-const UserModel = require("./models/User");
+const UserRoute = require("./routes/user");
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -29,11 +27,10 @@ mongoose
 //   console.log("Mongoose is connected!!!!");
 // });
 
-app.get("/", async (req, res) => {
-  await UserModel.find().then((response) => {
-    console.log("response", response);
-    res.send(response);
-  });
+app.use("/", UserRoute);
+
+app.get("/", (req, res) => {
+  res.send("Server is responding");
 });
 
 app.listen(PORT, () => {
