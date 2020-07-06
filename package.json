@@ -10,7 +10,8 @@
     "lint": "eslint ./ --fix"
   },
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "mongoose": "^5.9.21"
   },
   "engines": {
     "node": "10.16.0"
