@@ -13,13 +13,13 @@ app.use(bodyParser.json());
 app.use(cors());
 
 console.log("MONGODB_URI", process.env.MONGODB_URI);
+console.log("PORT", process.env.PORT);
 
 mongoose
   .connect(
     process.env.MONGODB_URI || "mongodb://localhost:27017/shop-anywhere",
     {
       useNewUrlParser: true,
-      useUnifiedTopology: true,
     }
   )
   .then(() => {
@@ -43,4 +43,5 @@ app.get("/", (req, res) => {
 
 app.listen(PORT, () => {
   console.log(`Shop Anywhere server is running on ${PORT}`);
+  debug(`Shop Anywhere server is running on ${PORT}`);
 });
