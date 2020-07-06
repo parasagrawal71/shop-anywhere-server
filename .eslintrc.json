@@ -18,7 +18,6 @@
     ],
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
     "react/prop-types": 0,
-    "no-console": ["error"],
     "react-hooks/exhaustive-deps": "error",
     "no-use-before-define": "off"
   }
