@@ -44,5 +44,4 @@ app.get("/", (req, res) => {
 
 app.listen(PORT, () => {
   console.log(`Shop Anywhere server is running on ${PORT}`);
-  debug(`Shop Anywhere server is running on ${PORT}`);
 });
