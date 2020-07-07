@@ -1,6 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
-const debug = require("debug");
+// const debug = require("debug");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const UserRoute = require("./routes/user");
@@ -24,11 +24,13 @@ mongoose
     }
   )
   .then(() => {
-    console.log("connected");
-    debug("Mongoose: Successfully connected to the database");
+    console.log("Mongoose: Successfully connected to the database");
   })
   .catch((err) => {
-    debug("Mongoose: Could not connect to the database. Exiting now...", err);
+    console.log(
+      "Mongoose: Could not connect to the database. Exiting now...",
+      err
+    );
     process.exit();
   });
 
@@ -45,3 +47,5 @@ app.get("/", (req, res) => {
 app.listen(PORT, () => {
   console.log(`Shop Anywhere server is running on ${PORT}`);
 });
+
+// https://shop-anywhere-server.herokuapp.com/ | https://git.heroku.com/shop-anywhere-server.git
