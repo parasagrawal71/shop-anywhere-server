@@ -6,7 +6,7 @@
   "author": "Paras Agrawal",
   "license": "MIT",
   "scripts": {
-    "start": "node server.js",
+    "start": "nodemon server.js",
     "lint": "eslint ./ --fix"
   },
   "dependencies": {
@@ -14,7 +14,8 @@
     "cors": "^2.8.5",
     "debug": "^4.1.1",
     "express": "^4.17.1",
-    "mongoose": "^5.9.21"
+    "mongoose": "^5.9.21",
+    "nodemon": "^2.0.4"
   },
   "engines": {
     "node": "10.16.0"

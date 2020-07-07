@@ -3,6 +3,7 @@ const UserModel = require("../models/User");
 
 const getUsers = (req, res) => {
   console.log("getUsers called");
+  console.log("MONGODB_URI", process.env.MONGODB_URI);
 
   mongoose
     .connect(
