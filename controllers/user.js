@@ -25,7 +25,7 @@ const getUsers = (req, res) => {
   //   });
   UserModel.find()
     .then((response) => {
-      // console.log("users", response);
+      console.log("users", response);
       res.status(200).send({
         success: true,
         response,
