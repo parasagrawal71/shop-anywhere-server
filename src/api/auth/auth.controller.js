@@ -1,8 +1,5 @@
 const UserModel = require("../users/users.model");
-const {
-  successResponse,
-  failureResponse,
-} = require("../../utils/response.format");
+const { successResponse, failureResponse } = require("../../utils/response.format");
 
 const Signup = async (req, res) => {
   const userObj = UserModel(req.body);
@@ -10,13 +7,15 @@ const Signup = async (req, res) => {
     .save()
     .then((response) => {
       //   console.log("response", response);
-      res.send(
-        successResponse(true, 200, "User account created", response, req.body)
-      );
+      res.status(201).send(successResponse(true, 201, "User account created", response, req.body));
     })
     .catch((e) => {
       //   console.log("catch error", e);
-      res.send(failureResponse(false, e.status, "", e, req.body));
+      if (e.name === "MongoError") {
+        res.status(400).send(failureResponse(false, 400, "Email Id already exists", "Bad Request", req.body));
+        return;
+      }
+      res.status(e.status).send(failureResponse(false, e.status, e.message, e, req.body));
     });
 };
 
