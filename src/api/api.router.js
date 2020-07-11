@@ -1,8 +1,8 @@
 const express = require("express");
 
 // IMPORT OF ROUTER TO ALL RESOURCES
-const usersRouter = require("./resources/users/users.router");
-const cartRouter = require("./resources/cart/cart.router");
+const usersRouter = require("./users/users.router");
+const cartRouter = require("./cart/cart.router");
 
 const apiRouter = express.Router();
 

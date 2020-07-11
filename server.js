@@ -1,6 +1,6 @@
 const express = require("express");
-const apiRouter = require("./api/api.router");
-require("./db.connect");
+const apiRouter = require("./src/api/api.router");
+require("./src/utils/db.connect");
 
 const app = express();
 const PORT = process.env.PORT || 5000;

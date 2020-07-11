@@ -6,7 +6,7 @@
   "author": "Paras Agrawal",
   "license": "MIT",
   "scripts": {
-    "start": "nodemon ./src/server.js",
+    "start": "nodemon server.js",
     "lint": "eslint ./ --fix"
   },
   "dependencies": {
