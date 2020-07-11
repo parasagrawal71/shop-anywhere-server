@@ -1,24 +1,21 @@
 const mongoose = require("mongoose");
 const { MONGODB_URI } = require("../config/db.config");
 
-const connectDB = mongoose
+const connectDatabase = mongoose
   .connect(MONGODB_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
   .then(() => {
-    console.log("Mongoose: Successfully connected to the database");
+    console.log("Successfully connected to the database");
   })
   .catch((e) => {
-    console.log(
-      "Mongoose: Could not connect to the database. Exiting now...",
-      e
-    );
+    console.log("Could not connect to the database. Exiting now...", e);
     process.exit();
   });
 
 mongoose.connection.on("connected", () => {
-  console.log("Mongoose is connected!!!!");
+  console.log("Database is connected!!!!");
 });
 
-module.exports = connectDB;
+module.exports = connectDatabase;
