@@ -1,4 +1,4 @@
-const UserModel = require("./users.model");
+const UserModel = require("./user.model");
 const { successResponse, failureResponse } = require("../../utils/response.format");
 
 const getUsers = (req, res) => {
