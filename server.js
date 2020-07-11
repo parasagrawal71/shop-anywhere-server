@@ -8,7 +8,7 @@ const PORT = process.env.PORT || 5000;
 app.use("/api/v1", apiRouter);
 
 app.get("/", (req, res) => {
-  res.send("Welcome to Shop Anywhere API Server");
+  res.send("Welcome to Shop Anywhere API Server!");
 });
 
 app.listen(PORT, () => {
