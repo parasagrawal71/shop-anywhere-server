@@ -1,15 +1,16 @@
 const CartModel = require("./cart.model");
+const {
+  successResponse,
+  failureResponse,
+} = require("../../utils/response.format");
 
 const getCartItems = (req, res) => {
   CartModel.find()
     .then((response) => {
-      res.status(200).send({
-        success: true,
-        data: response,
-      });
+      res.send(successResponse(true, 200, "", response, null));
     })
-    .catch((err) => {
-      res.send(err);
+    .catch((e) => {
+      res.send(failureResponse(false, e.status, "", e, null));
     });
 };
 
